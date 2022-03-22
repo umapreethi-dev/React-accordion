@@ -1,23 +1,16 @@
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
+import Accordion from "./Accordion"
+import data from "./data"
 
 function App() {
+  const accordion = data.map(item => {
+    return <Accordion title={item.title} content={item.content}/>
+  })
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      
+      {accordion}
     </div>
   );
 }
